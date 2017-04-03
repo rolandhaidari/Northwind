@@ -24,5 +24,49 @@ namespace NorthwindWPF
         {
             InitializeComponent();
         }
+
+        private void emp_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+                employeeList l = new employeeList();
+                l.Show();
+            }
+        }
+
+        private void cus_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+            }
+        }
+
+        private void pro_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+            }
+        }
+
+        private void sup_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+            }
+        }
+
+        private void shi_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+            }
+        }
+
+        private void ord_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            {
+            }
+        }
     }
 }

@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="250" Width="525">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="images/pic2.jpg" />
+    </Window.Background>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
         
+        <TextBlock FontSize="25" Text="Welcome to the Northwind DB Administrator" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+  
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="emp" Content="Manage employees" Margin="10, 30" Width="150" Click="emp_Click"/>
+            <Button x:Name="cus" Content="Manage customers" Margin="10, 30" Width="150" Click="cus_Click"/>
+            <Button x:Name="pro" Content="Manage products" Margin="10, 30" Width="150" Click="pro_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="sup" Content="Manage suppliers" Margin="10, 30" Width="150" Click="sup_Click"/>
+            <Button x:Name="shi" Content="Manage shippers" Margin="10, 30" Width="150" Click="shi_Click"/>
+            <Button x:Name="ord" Content="Manage orders" Margin="10, 30" Width="150" Click="ord_Click"/>
+        </StackPanel>
+
     </Grid>
 </Window>

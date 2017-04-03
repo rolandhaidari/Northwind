@@ -99,6 +99,15 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="employeeEdit.xaml.cs">
+      <DependentUpon>employeeEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employeeList.xaml.cs">
+      <DependentUpon>employeeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employeeSubEdit.xaml.cs">
+      <DependentUpon>employeeSubEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employee_Sales_by_Country_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -179,6 +188,18 @@
     <Compile Include="Territory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="employeeEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employeeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employeeSubEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -238,6 +259,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\pic2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -252,6 +276,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
