@@ -36,7 +36,7 @@ namespace NorthwindWPF
 
         private void cus_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            if (!Application.Current.Windows.OfType<customerList>().Any())
             {
                 customerList c = new customerList();
                 c.Show();
@@ -45,7 +45,7 @@ namespace NorthwindWPF
 
         private void pro_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            if (!Application.Current.Windows.OfType<Products.productList>().Any())
             {
                 Products.productList p = new Products.productList();
                 p.Show();
@@ -54,7 +54,7 @@ namespace NorthwindWPF
 
         private void sup_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            if (!Application.Current.Windows.OfType<Suppliers.supList>().Any())
             {
                 Suppliers.supList s = new Suppliers.supList();
                 s.Show();
@@ -63,7 +63,7 @@ namespace NorthwindWPF
 
         private void shi_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            if (!Application.Current.Windows.OfType<Shippers.shipperList>().Any())
             {
                 Shippers.shipperList s = new Shippers.shipperList();
                 s.Show();
@@ -72,11 +72,17 @@ namespace NorthwindWPF
 
         private void ord_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeList>().Any())
+            if (!Application.Current.Windows.OfType<Orders.orderList>().Any())
             {
                 Orders.orderList o = new Orders.orderList();
                 o.Show();
             }
+        }
+
+        private void overview_Click(object sender, RoutedEventArgs e)
+        {
+            Overview o = new Overview();
+            o.Show();
         }
     }
 }

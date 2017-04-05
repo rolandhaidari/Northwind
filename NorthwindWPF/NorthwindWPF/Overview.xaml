@@ -1,0 +1,83 @@
+﻿<Window x:Class="NorthwindWPF.Overview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthwindWPF"
+        xmlns:localn="clr-namespace:NorthwindWPF.context"
+        mc:Ignorable="d"
+        Title="Overview" Height="300" Width="500">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="op" ObjectType="{x:Type localn:viewmodel}" />
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource op} }">
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Employees"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label>
+                    <DataGrid>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                x:Name="empID"
+                                Header="EmployeeID"
+                                Width="SizeToHeader" />
+
+                    
+                    </DataGrid.Columns>
+                    </DataGrid>
+                </Label>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Customers"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Content goes here...as" />
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Products"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Content goes here...ac" />
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Suppliers"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Content goes here..." />
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Shippers"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Content goes here..." />
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Orders"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Content goes here..." />
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>
