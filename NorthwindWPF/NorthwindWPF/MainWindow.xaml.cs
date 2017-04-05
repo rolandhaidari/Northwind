@@ -38,6 +38,8 @@ namespace NorthwindWPF
         {
             if (!Application.Current.Windows.OfType<employeeList>().Any())
             {
+                customerList c = new customerList();
+                c.Show();
             }
         }
 
@@ -45,6 +47,8 @@ namespace NorthwindWPF
         {
             if (!Application.Current.Windows.OfType<employeeList>().Any())
             {
+                Products.productList p = new Products.productList();
+                p.Show();
             }
         }
 
@@ -52,6 +56,8 @@ namespace NorthwindWPF
         {
             if (!Application.Current.Windows.OfType<employeeList>().Any())
             {
+                Suppliers.supList s = new Suppliers.supList();
+                s.Show();
             }
         }
 
@@ -59,6 +65,8 @@ namespace NorthwindWPF
         {
             if (!Application.Current.Windows.OfType<employeeList>().Any())
             {
+                Shippers.shipperList s = new Shippers.shipperList();
+                s.Show();
             }
         }
 
@@ -66,6 +74,8 @@ namespace NorthwindWPF
         {
             if (!Application.Current.Windows.OfType<employeeList>().Any())
             {
+                Orders.orderList o = new Orders.orderList();
+                o.Show();
             }
         }
     }

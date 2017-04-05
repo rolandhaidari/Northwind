@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace NorthwindWPF
 {
     /// <summary>
-    /// Interaction logic for employeeEdit.xaml
+    /// Interaction logic for customerSubEdit.xaml
     /// </summary>
-    public partial class employeeEdit : Window
+    public partial class customerSubEdit : Window
     {
-        public employeeEdit()
+        public customerSubEdit()
         {
             InitializeComponent();
         }
