@@ -37,10 +37,23 @@ namespace NorthwindWPF
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Customer c = new Customer();
+            c.CompanyName = "NEW";
+            db.Customers.Add(c);
+            Window_Loaded(sender, e);
+            licus.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                customerSubEdit ed = new customerSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

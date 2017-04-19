@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:NorthwindWPF"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="customerList" Height="350" Width="300">
+        Title="customerList" Height="350" Width="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="290*"/>
             <RowDefinition Height="40*"/>
@@ -24,9 +28,42 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="0">
+            <StackPanel  DataContext="{Binding ElementName=licus, Path=SelectedItem}">
+                <StackPanel >
+                    <TextBlock Text="Customer ID" />
+                    <TextBox Text="{Binding CustomerID}" />
+                    <TextBlock Text="Company Name" />
+                    <TextBox Text="{Binding CompanyName}" />
+                    <TextBlock Text="Contact Name" />
+                    <TextBox Text="{Binding ContactName}" />
+                    <TextBlock Text="Contact Title" />
+                    <TextBox Text="{Binding ContactTitle}" />
+                    <TextBlock Text="Address" />
+                    <TextBox Text="{Binding Address}" />
+                    <TextBlock Text="City" />
+                    <TextBox Text="{Binding City}" />
+                    <TextBlock Text="Region" />
+                    <TextBox Text="{Binding Region}" />
+                    <TextBlock Text="Postal Code" />
+                    <TextBox Text="{Binding PostalCode}" />
+                    <TextBlock Text="Country" />
+                    <TextBox Text="{Binding Country}" />
+                    <TextBlock Text="Phone" />
+                    <TextBox Text="{Binding Phone}" />
+                    <TextBlock Text="Fax" />
+                    <TextBox Text="{Binding Fax}" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Add customer" Click="add_Click" Margin="5" Width="120"/>
             <Button Content="Remove customer" Click="remove_Click" Margin="5" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Content="Save changes" Click="save_Click" Margin="5" Width="120"/>
         </StackPanel>
 
     </Grid>

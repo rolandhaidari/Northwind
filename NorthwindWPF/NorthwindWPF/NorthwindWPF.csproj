@@ -119,9 +119,6 @@
     <Compile Include="Customers\customerList.xaml.cs">
       <DependentUpon>customerList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Customers\customerSubEdit.xaml.cs">
-      <DependentUpon>customerSubEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Customer_and_Suppliers_by_City.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -140,9 +137,6 @@
     <Compile Include="Employees\employeeList.xaml.cs">
       <DependentUpon>employeeList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employees\employeeSubEdit.xaml.cs">
-      <DependentUpon>employeeSubEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Employee_Sales_by_Country_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -159,9 +153,6 @@
     </Compile>
     <Compile Include="Orders\orderList.xaml.cs">
       <DependentUpon>orderList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Orders\orderSubEdit.xaml.cs">
-      <DependentUpon>orderSubEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Orders_Qry.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -183,9 +174,6 @@
     </Compile>
     <Compile Include="Products\productList.xaml.cs">
       <DependentUpon>productList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Products\productSubEdit.xaml.cs">
-      <DependentUpon>productSubEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Products_Above_Average_Price.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -217,9 +205,6 @@
     <Compile Include="Shippers\shipperList.xaml.cs">
       <DependentUpon>shipperList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Shippers\shipperSubEdit.xaml.cs">
-      <DependentUpon>shipperSubEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -238,9 +223,6 @@
     <Compile Include="Suppliers\supList.xaml.cs">
       <DependentUpon>supList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Suppliers\supSubEdit.xaml.cs">
-      <DependentUpon>supSubEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -255,15 +237,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Customers\customerSubEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Employees\employeeList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Employees\employeeSubEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,10 +257,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Orders\orderSubEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Overview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,23 +265,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Products\productSubEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Shippers\shipperList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Shippers\shipperSubEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Suppliers\supList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Suppliers\supSubEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

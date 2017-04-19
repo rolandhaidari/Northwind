@@ -37,10 +37,22 @@ namespace NorthwindWPF.Shippers
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Shipper s = new Shipper();
+            db.Shippers.Add(s);
+            Window_Loaded(sender, e);
+            lishi.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                shipperSubEdit ed = new shipperSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

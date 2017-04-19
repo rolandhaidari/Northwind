@@ -37,10 +37,22 @@ namespace NorthwindWPF.Orders
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Order o = new Order();
+            db.Orders.Add(o);
+            Window_Loaded(sender, e);
+            liord.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                orderSubEdit ed = new orderSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

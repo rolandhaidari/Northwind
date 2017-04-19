@@ -33,14 +33,29 @@ namespace NorthwindWPF
             var list = db.Employees;
             list.Load();
             liemp.ItemsSource = list.Local.OrderBy(l => l.LastName);
+
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Employee em = new Employee();
+            em.FirstName = "NEW";
+            em.LastName = "NEW";
+            db.Employees.Add(em);
+            Window_Loaded(sender, e);
+            liemp.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                employeeSubEdit ed = new employeeSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

@@ -37,10 +37,22 @@ namespace NorthwindWPF.Products
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Product p = new Product();
+            db.Products.Add(p);
+            Window_Loaded(sender, e);
+            lipro.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                productSubEdit ed = new productSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

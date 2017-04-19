@@ -6,12 +6,18 @@
         xmlns:local="clr-namespace:NorthwindWPF.Shippers"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="shipperList" Height="350" Width="300">
+        Title="shipperList" Height="350" Width="600">
     <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="290*"/>
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
+        
         <ListBox x:Name="lishi" Grid.Column="0" Grid.Row="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -25,9 +31,24 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel  DataContext="{Binding ElementName=lishi, Path=SelectedItem}" Grid.Column="1" Grid.Row="0">
+                <StackPanel >
+                    <TextBlock Text="Shipper ID" />
+                    <TextBox Text="{Binding ShipperID}" />
+                    <TextBlock Text="Company Name" />
+                    <TextBox Text="{Binding CompanyName}" />
+                    <TextBlock Text="Phone" />
+                    <TextBox Text="{Binding Phone}" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Add shipper" Click="add_Click" Margin="5" Width="120"/>
             <Button Content="Remove shipper" Click="remove_Click" Margin="5" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Content="Save changes" Click="save_Click" Margin="5" Width="120"/>
         </StackPanel>
 
     </Grid>

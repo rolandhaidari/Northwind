@@ -6,12 +6,17 @@
         xmlns:local="clr-namespace:NorthwindWPF.Products"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="productList" Height="350" Width="300">
+        Title="productList" Height="350" Width="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="290*"/>
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
+        
         <ListBox x:Name="lipro" Grid.Column="0" Grid.Row="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -25,9 +30,40 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="0">
+            <StackPanel  DataContext="{Binding ElementName=lipro, Path=SelectedItem}">
+                <StackPanel >
+                    <TextBlock Text="ProductID" />
+                    <TextBox Text="{Binding ProductID}" />
+                    <TextBlock Text="Product Name" />
+                    <TextBox Text="{Binding ProductName}" />
+                    <TextBlock Text="Supplier ID" />
+                    <TextBox Text="{Binding SupplierID}" />
+                    <TextBlock Text="Category ID" />
+                    <TextBox Text="{Binding CategoryID}" />
+                    <TextBlock Text="Quantity Per Unit" />
+                    <TextBox Text="{Binding QuantityPerUnit}" />
+                    <TextBlock Text="Unit Price" />
+                    <TextBox Text="{Binding UnitPrice}" />
+                    <TextBlock Text="Units In Stock" />
+                    <TextBox Text="{Binding UnitsInStock}" />
+                    <TextBlock Text="Units On Order" />
+                    <TextBox Text="{Binding UnitsOnOrder}" />
+                    <TextBlock Text="Reorder Level" />
+                    <TextBox Text="{Binding ReorderLevel}" />
+                    <TextBlock Text="Discontinued" />
+                    <TextBox Text="{Binding Discontinued}" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Add product" Click="add_Click" Margin="5" Width="120"/>
             <Button Content="Remove product" Click="remove_Click" Margin="5" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Content="Save changes" Click="save_Click" Margin="5" Width="120"/>
         </StackPanel>
 
     </Grid>

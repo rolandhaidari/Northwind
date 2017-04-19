@@ -37,10 +37,22 @@ namespace NorthwindWPF.Suppliers
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Application.Current.Windows.OfType<employeeSubEdit>().Any())
+            Supplier s = new Supplier();
+            db.Suppliers.Add(s);
+            Window_Loaded(sender, e);
+            lisup.Items.Refresh();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                supSubEdit ed = new supSubEdit();
-                ed.Show();
+                db.SaveChanges();
+            }
+            catch (Exception e1)
+            {
+
+                Console.WriteLine(e1.Source);
             }
         }
 

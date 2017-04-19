@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:NorthwindWPF.Orders"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="orderList" Height="350" Width="300">
+        Title="orderList" Height="350" Width="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="290*"/>
             <RowDefinition Height="40*"/>
@@ -24,6 +28,45 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="0">
+            <StackPanel  DataContext="{Binding ElementName=liord, Path=SelectedItem}">
+                <StackPanel >
+                    <TextBlock Text="Order ID" />
+                    <TextBox Text="{Binding OrderID}" />
+                    <TextBlock Text="Customer ID" />
+                    <TextBox Text="{Binding CustomerID}" />
+                    <TextBlock Text="Employee ID" />
+                    <TextBox Text="{Binding EmployeeID}" />
+                    <TextBlock Text="Order Date" />
+                    <TextBox Text="{Binding OrderDate}" />
+                    <TextBlock Text="Required Date" />
+                    <TextBox Text="{Binding RequiredDate}" />
+                    <TextBlock Text="Birth Shipped Date" />
+                    <TextBox Text="{Binding ShippedDate}" />
+                    <TextBlock Text="Ship Via" />
+                    <TextBox Text="{Binding ShipVia}" />
+                    <TextBlock Text="Freight" />
+                    <TextBox Text="{Binding Freight}" />
+                    <TextBlock Text="Ship Name" />
+                    <TextBox Text="{Binding ShipName}" />
+                    <TextBlock Text="Ship Address" />
+                    <TextBox Text="{Binding ShipAddress}" />
+                    <TextBlock Text="Ship City" />
+                    <TextBox Text="{Binding ShipCity}" />
+                    <TextBlock Text="Ship Region" />
+                    <TextBox Text="{Binding ShipRegion}" />
+                    <TextBlock Text="Home Ship Postal Code" />
+                    <TextBox Text="{Binding ShipPostalCode}" />
+                    <TextBlock Text="Ship Country" />
+                    <TextBox Text="{Binding ShipCountry}" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Content="Save changes" Click="save_Click" Margin="5" Width="120"/>
+        </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Add order" Click="add_Click" Margin="5" Width="120"/>
