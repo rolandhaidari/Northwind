@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindWPF"
+        xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Title="employeeList" Height="350" Width="600">
@@ -32,7 +33,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="0">
             <StackPanel  DataContext="{Binding ElementName=liemp, Path=SelectedItem}">
                 <StackPanel >
-                    <TextBlock Text="Employee ID" />
+                    <TextBlock IsEnabled="False" Text="Employee ID" />
                     <TextBox Text="{Binding EmployeeID}" />
                     <TextBlock Text="Last Name" />
                     <TextBox Text="{Binding LastName}" />
@@ -62,8 +63,28 @@
                     <TextBox Text="{Binding Extension}" />
                     <TextBlock Text="Notes" />
                     <TextBox Text="{Binding Notes}" />
-                    <TextBlock Text="Reports to" />
-                    <TextBox Text="{Binding ReportsTo}" />
+                    <TextBlock Text="Reports to :" />
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllEmp, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="EmployeeID"
+                      SelectedValue="{Binding Path=ReportsTo}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding LastName}" />
+                                        <TextBlock Text="{Binding FirstName}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
