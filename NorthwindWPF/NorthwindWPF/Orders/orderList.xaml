@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindWPF.Orders"
+        xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Title="orderList" Height="350" Width="600">
@@ -33,33 +34,175 @@
             <StackPanel  DataContext="{Binding ElementName=liord, Path=SelectedItem}">
                 <StackPanel >
                     <TextBlock Text="Order ID" />
-                    <TextBox Text="{Binding OrderID}" />
+                    <TextBlock Text="{Binding OrderID}" />
                     <TextBlock Text="Customer ID" />
-                    <TextBox Text="{Binding CustomerID}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllCus, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="CustomerID"
+                      SelectedValue="{Binding Path=CustomerID}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CustomerID}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Employee ID" />
-                    <TextBox Text="{Binding EmployeeID}" />
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllEmp, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="EmployeeID"
+                      SelectedValue="{Binding Path=EmployeeID}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding EmployeeID}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    
                     <TextBlock Text="Order Date" />
                     <TextBox Text="{Binding OrderDate}" />
                     <TextBlock Text="Required Date" />
                     <TextBox Text="{Binding RequiredDate}" />
                     <TextBlock Text="Birth Shipped Date" />
                     <TextBox Text="{Binding ShippedDate}" />
-                    <TextBlock Text="Ship Via" />
-                    <TextBox Text="{Binding ShipVia}" />
+
+                    <TextBlock Text="Ship via" />
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="ShipVia"
+                      SelectedValue="{Binding Path=ShipVia}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding ShipVia}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Freight" />
                     <TextBox Text="{Binding Freight}" />
                     <TextBlock Text="Ship Name" />
                     <TextBox Text="{Binding ShipName}" />
                     <TextBlock Text="Ship Address" />
                     <TextBox Text="{Binding ShipAddress}" />
+                    
                     <TextBlock Text="Ship City" />
-                    <TextBox Text="{Binding ShipCity}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="ShipCity"
+                      SelectedValue="{Binding Path=ShipCity}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding ShipCity}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Ship Region" />
-                    <TextBox Text="{Binding ShipRegion}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="ShipRegion"
+                      SelectedValue="{Binding Path=ShipRegion}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding ShipRegion}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Home Ship Postal Code" />
-                    <TextBox Text="{Binding ShipPostalCode}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="ShipPostalCode"
+                      SelectedValue="{Binding Path=ShipPostalCode}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding ShipPostalCode}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Ship Country" />
-                    <TextBox Text="{Binding ShipCountry}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="ShipCountry"
+                      SelectedValue="{Binding Path=ShipCountry}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding ShipCountry}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

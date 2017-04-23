@@ -15,6 +15,11 @@ namespace NorthwindWPF.context
             get { return db.Employees.ToList(); }
         }
 
+        public List<Category> AllCat
+        {
+            get { return db.Categories.ToList(); }
+        }
+
         public List<Customer> AllCus
         {
             get { return db.Customers.ToList(); }

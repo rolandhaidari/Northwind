@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindWPF.Products"
+        xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Title="productList" Height="350" Width="600">
@@ -38,9 +39,47 @@
                     <TextBlock Text="Product Name" />
                     <TextBox Text="{Binding ProductName}" />
                     <TextBlock Text="Supplier ID" />
-                    <TextBox Text="{Binding SupplierID}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="SupplierID"
+                      SelectedValue="{Binding Path=SupplierID}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CompanyName}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Category ID" />
-                    <TextBox Text="{Binding CategoryID}" />
+
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <localm:viewmodel  x:Key="viewmodel" />
+                        </StackPanel.Resources>
+                        <ComboBox ItemsSource="{Binding AllCat, Source={StaticResource viewmodel}}"                      
+                      SelectedValuePath="CategoryID"
+                      SelectedValue="{Binding Path=CategoryID}">
+
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CategoryName}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
                     <TextBlock Text="Quantity Per Unit" />
                     <TextBox Text="{Binding QuantityPerUnit}" />
                     <TextBlock Text="Unit Price" />
