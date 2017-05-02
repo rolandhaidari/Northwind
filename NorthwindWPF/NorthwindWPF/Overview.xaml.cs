@@ -19,6 +19,7 @@ namespace NorthwindWPF
     /// </summary>
     public partial class Overview : Window
     {
+
         public Overview()
         {
             InitializeComponent();

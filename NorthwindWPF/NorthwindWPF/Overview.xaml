@@ -18,16 +18,16 @@
                         <TextBlock Text="Employees"/>
                     </StackPanel>
                 </TabItem.Header>
+
                 <Label>
-                    <DataGrid>
+                    <DataGrid DataContext="{Binding Path=AllEmp}">
                         <DataGrid.Columns>
                             <DataGridTextColumn
-                                x:Name="empID"
+                                x:Name="EmployeeID"
+                                Binding="{Binding EmployeeID}"
                                 Header="EmployeeID"
                                 Width="SizeToHeader" />
-
-                    
-                    </DataGrid.Columns>
+                        </DataGrid.Columns>
                     </DataGrid>
                 </Label>
             </TabItem>

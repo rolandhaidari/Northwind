@@ -34,7 +34,7 @@
             <StackPanel  DataContext="{Binding ElementName=liord, Path=SelectedItem}">
                 <StackPanel >
                     <TextBlock Text="Order ID" />
-                    <TextBlock Text="{Binding OrderID}" />
+                    <TextBox Text="{Binding OrderID}" />
                     <TextBlock Text="Customer ID" />
 
                     <StackPanel>
@@ -193,9 +193,7 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-
                                         <TextBlock Text="{Binding ShipCountry}" />
-
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
