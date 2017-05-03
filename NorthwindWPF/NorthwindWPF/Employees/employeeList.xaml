@@ -50,16 +50,16 @@
                       SelectedValue="{Binding Path=Title}">
 
 
-                            <ComboBox.ItemTemplate>
+                            <!--<ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
 
-                                        <TextBlock Text="{Binding Title}" />
+                                        <TextBlock Text="{Binding AllTits}" />
 
                                     </StackPanel>
                                 </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+                            </ComboBox.ItemTemplate> -->
+                        </ComboBox> 
                     </StackPanel>
 
                     <TextBlock Text="Title of Courtesy" />
