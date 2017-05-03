@@ -11,6 +11,8 @@ namespace NorthwindWPF.context
 
         NorthwindEntities db = new NorthwindEntities();
 
+
+
         public List<Employee> AllEmp {
             get { return db.Employees.ToList(); }
         }

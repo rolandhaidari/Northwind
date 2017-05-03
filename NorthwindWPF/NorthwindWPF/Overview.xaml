@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindWPF"
         xmlns:localn="clr-namespace:NorthwindWPF.context"
-        xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
-        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
         Title="Overview" Height="300" Width="500">
     <Window.Resources>
@@ -22,25 +22,18 @@
                 </TabItem.Header>
 
                 <Label>
-                    <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
-                        Width="400" Height="250"
-                    Background="LightSteelBlue">
-                        <DVC:Chart.Series>
-                            <DVC:PieSeries Title="Experience" 
-            IndependentValueBinding="{Binding Path=AllCus}"
-            DependentValueBinding="{Binding Path=AllCat}">
-                            </DVC:PieSeries>
-                        </DVC:Chart.Series>
-                    </DVC:Chart>
-                    <!--<DataGrid DataContext="{Binding Path=AllEmp}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn
-                                x:Name="EmployeeID"
-                                Binding="{Binding EmployeeID}"
-                                Header="EmployeeID"
-                                Width="SizeToHeader" />
-                        </DataGrid.Columns>
-                    </DataGrid> -->
+                    <lvc:PieChart DataContext="{Binding AllEmp}" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Height="235" Width="478">
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Title="Maria" Values="3" DataLabels="True"
+                               LabelPoint="{Binding EmployeeID}"/>
+                            <lvc:PieSeries Title="Charles" Values="4" DataLabels="True" 
+                               LabelPoint="{Binding LastName}"/>
+                            <lvc:PieSeries Title="Frida" Values="6" DataLabels="True" 
+                               LabelPoint="{Binding FirstName}"/>
+                            <lvc:PieSeries Title="Frederic" Values="2" DataLabels="True" 
+                               LabelPoint="{Binding City}"/>
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
                 </Label>
             </TabItem>
 
