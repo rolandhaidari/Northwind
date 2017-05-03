@@ -45,7 +45,7 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllEmp, Source={StaticResource viewmodel}}"                      
+                        <ComboBox ItemsSource="{Binding Alltits, Source={StaticResource viewmodel}}"                      
                       SelectedValuePath="Title"
                       SelectedValue="{Binding Path=Title}">
 

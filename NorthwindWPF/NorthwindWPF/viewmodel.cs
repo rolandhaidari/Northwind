@@ -14,7 +14,11 @@ namespace NorthwindWPF.context
         public List<Employee> AllEmp {
             get { return db.Employees.ToList(); }
         }
-
+       
+       public List<string> Alltits
+        {
+            get { return AllEmp.Select(e => e.Title).Distinct().ToList(); } 
+        }
         public List<Category> AllCat
         {
             get { return db.Categories.ToList(); }
