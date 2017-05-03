@@ -116,20 +116,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="ShipCity"
+                        <ComboBox ItemsSource="{Binding AllScty, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=ShipCity}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding ShipCity}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -139,20 +127,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="ShipRegion"
+                        <ComboBox ItemsSource="{Binding AllOsr, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=ShipRegion}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding ShipRegion}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -162,20 +138,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="ShipPostalCode"
+                        <ComboBox ItemsSource="{Binding AllOhs, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=ShipPostalCode}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding ShipPostalCode}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -185,18 +149,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllOrd, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="ShipCountry"
+                        <ComboBox ItemsSource="{Binding AllOctry, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=ShipCountry}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding ShipCountry}" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 

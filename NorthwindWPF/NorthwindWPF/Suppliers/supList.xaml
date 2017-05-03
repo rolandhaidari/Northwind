@@ -66,20 +66,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="ContactTitle"
+                        <ComboBox ItemsSource="{Binding AllCt, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=ContactTitle}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding ContactTitle}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -92,20 +80,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="City"
+                        <ComboBox ItemsSource="{Binding AllSct, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=City}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding City}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -115,20 +91,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="Region"
+                        <ComboBox ItemsSource="{Binding AllSReg, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=Region}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding Region}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -138,20 +102,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="PostalCode"
+                        <ComboBox ItemsSource="{Binding AllSps, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=PostalCode}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding PostalCode}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
@@ -161,20 +113,8 @@
                         <StackPanel.Resources>
                             <localm:viewmodel  x:Key="viewmodel" />
                         </StackPanel.Resources>
-                        <ComboBox ItemsSource="{Binding AllSup, Source={StaticResource viewmodel}}"                      
-                      SelectedValuePath="Country"
+                        <ComboBox ItemsSource="{Binding AllSCtry, Source={StaticResource viewmodel}}"                      
                       SelectedValue="{Binding Path=Country}">
-
-
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-
-                                        <TextBlock Text="{Binding Country}" />
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
 
