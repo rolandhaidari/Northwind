@@ -8,7 +8,9 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
-        Title="Overview" Height="300" Width="500">
+        Title="Overview" Height="300" Width="500"
+        d:DesignHeight="300" d:DesignWidth="500" 
+             d:DataContext="{d:DesignInstance local:Overview}">
     <Window.Resources>
         <ObjectDataProvider x:Key="op" ObjectType="{x:Type localn:viewmodel}" />
     </Window.Resources>
