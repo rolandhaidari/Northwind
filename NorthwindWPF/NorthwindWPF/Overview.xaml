@@ -11,10 +11,8 @@
         Title="Overview" Height="300" Width="500"
         d:DesignHeight="300" d:DesignWidth="500" 
              d:DataContext="{d:DesignInstance local:Overview}">
-    <Window.Resources>
-        <ObjectDataProvider x:Key="op" ObjectType="{x:Type localn:viewmodel}" />
-    </Window.Resources>
-    <Grid DataContext="{Binding Source={StaticResource op} }">
+
+    <Grid>
         <TabControl>
             <TabItem>
                 <TabItem.Header>
@@ -23,20 +21,18 @@
                     </StackPanel>
                 </TabItem.Header>
 
-                <Label>
-                    <lvc:PieChart DataContext="{Binding AllEmp}" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Height="235" Width="478">
-                        <lvc:PieChart.Series>
-                            <lvc:PieSeries Title="Maria" Values="3" DataLabels="True"
-                               LabelPoint="{Binding EmployeeID}"/>
-                            <lvc:PieSeries Title="Charles" Values="4" DataLabels="True" 
-                               LabelPoint="{Binding LastName}"/>
-                            <lvc:PieSeries Title="Frida" Values="6" DataLabels="True" 
-                               LabelPoint="{Binding FirstName}"/>
-                            <lvc:PieSeries Title="Frederic" Values="2" DataLabels="True" 
-                               LabelPoint="{Binding City}"/>
-                        </lvc:PieChart.Series>
-                    </lvc:PieChart>
-                </Label>
+                <lvc:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}">
+                    <lvc:PieChart.Series>
+                        <lvc:PieSeries Title="Maria" Values="3" DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="Charles" Values="4" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="Frida" Values="6" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="Frederic" Values="2" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                    </lvc:PieChart.Series>
+                </lvc:PieChart>
             </TabItem>
 
             <TabItem>
