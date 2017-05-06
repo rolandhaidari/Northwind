@@ -21,7 +21,7 @@
                     </StackPanel>
                 </TabItem.Header>
         
-                <lvc:PieChart Background="Black" Series="{Binding seriesCollection}" Height="150" InnerRadius="100" Margin="0 15" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True" >
+                <lvc:PieChart Series="{Binding seriesCollection}" Height="150" InnerRadius="100" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
                     <lvc:PieChart.ChartLegend>
                         <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
                     </lvc:PieChart.ChartLegend>

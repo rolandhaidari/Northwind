@@ -13,9 +13,11 @@
             <TextBox x:Name="un"/>
             <TextBlock Text="Password" />
             <PasswordBox x:Name="ps"/>
-        </StackPanel>
-        <Button Content="Login" Click="Button_Click"/>
-        <TextBlock Name="error" Foreground="#FFF40000"/>
+                <TextBlock />
+                <Button Content="Login" Click="Button_Click"/>
+            </StackPanel>
+            <TextBlock />
+            <TextBlock Name="error" Foreground="#FFF40000"/>
         </StackPanel>
     </Grid>
 </Window>

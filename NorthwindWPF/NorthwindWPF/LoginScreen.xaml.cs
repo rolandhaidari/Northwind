@@ -19,7 +19,6 @@ namespace NorthwindWPF
     /// </summary>
     public partial class LoginScreen : Window
     {
-
         public LoginScreen()
         {
             InitializeComponent();
