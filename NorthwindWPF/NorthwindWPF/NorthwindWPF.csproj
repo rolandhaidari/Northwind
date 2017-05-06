@@ -116,6 +116,7 @@
     <Compile Include="Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Categorysales.cs" />
     <Compile Include="Category_Sales_for_1997.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

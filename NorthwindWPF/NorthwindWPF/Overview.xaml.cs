@@ -1,6 +1,8 @@
 ﻿using LiveCharts;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,16 +25,27 @@ namespace NorthwindWPF
     public partial class Overview : Window
     {
 
-      
         public Overview()
         {
             InitializeComponent();
+            NorthwindEntities db = new NorthwindEntities();
+            var data = (from d in db.Sales_by_Categories group d by d.CategoryName into grouped select new { Key = grouped.Key, Sum = grouped.Sum(e => (double)e.ProductSales) });
+            IEnumerable<Categorysales> datas = from c in data.AsEnumerable() select new Categorysales(c.Key, c.Sum);
 
-            PointLabel = chartPoint =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
-            DataContext = this;
+            seriesCollection = new SeriesCollection();
+            foreach (var item in datas)
+            {
+                seriesCollection.Add(new PieSeries { Title = item.Categoryname, Values = new ChartValues<ObservableValue> { new ObservableValue(item.Categorysum) }, DataLabels = true});//, LabelPoint = PointLabel 
+            }
+           /* PointLabel = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);*/
+                
+           // DataContext = this;
         }
+        public SeriesCollection seriesCollection { get; set; }
+
+
 
         public Func<ChartPoint, string> PointLabel { get; set; }
 

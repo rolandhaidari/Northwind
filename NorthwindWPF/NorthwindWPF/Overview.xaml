@@ -20,19 +20,17 @@
                         <TextBlock Text="Employees"/>
                     </StackPanel>
                 </TabItem.Header>
-
-                <lvc:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}">
-                    <lvc:PieChart.Series>
-                        <lvc:PieSeries Title="Maria" Values="3" DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
-                        <lvc:PieSeries Title="Charles" Values="4" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                        <lvc:PieSeries Title="Frida" Values="6" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                        <lvc:PieSeries Title="Frederic" Values="2" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                    </lvc:PieChart.Series>
+        
+                <lvc:PieChart Background="Black" Series="{Binding seriesCollection}" Height="150" InnerRadius="100" Margin="0 15" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True" >
+                    <lvc:PieChart.ChartLegend>
+                        <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
+                    </lvc:PieChart.ChartLegend>
+                    <lvc:PieChart.DataTooltip>
+                        <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+                    </lvc:PieChart.DataTooltip>
                 </lvc:PieChart>
+                 
+               
             </TabItem>
 
             <TabItem>
