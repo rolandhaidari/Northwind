@@ -8,7 +8,7 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
-        Title="Overview" Height="700" Width="800"
+        Title="Overview" Height="400" Width="550"
         d:DesignHeight="300" d:DesignWidth="500" 
              d:DataContext="{d:DesignInstance local:Overview}">
 
@@ -17,11 +17,11 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Employees"/>
+                        <TextBlock Text="Sales by category"/>
                     </StackPanel>
                 </TabItem.Header>
         
-                <lvc:PieChart Series="{Binding seriesCollection, RelativeSource={RelativeSource AncestorType=Window}}" Background="Black" Foreground="White" InnerRadius="10" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
+                <lvc:PieChart Series="{Binding seriesCollection, RelativeSource={RelativeSource AncestorType=Window}}" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
                     <lvc:PieChart.ChartLegend>
                         <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
                     </lvc:PieChart.ChartLegend>
