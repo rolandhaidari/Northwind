@@ -13,7 +13,7 @@
             <TextBox x:Name="un"/>
             <TextBlock Text="Password" />
             <PasswordBox x:Name="ps"/>
-                <TextBlock />
+                <TextBlock Text="User:admin Pass:admin"/>
                 <Button Content="Login" Click="Button_Click"/>
             </StackPanel>
             <TextBlock />
