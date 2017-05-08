@@ -8,7 +8,7 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:localm="clr-namespace:NorthwindWPF.context"
         mc:Ignorable="d"
-        Title="Overview" Height="300" Width="500"
+        Title="Overview" Height="700" Width="800"
         d:DesignHeight="300" d:DesignWidth="500" 
              d:DataContext="{d:DesignInstance local:Overview}">
 
@@ -21,7 +21,7 @@
                     </StackPanel>
                 </TabItem.Header>
         
-                <lvc:PieChart Series="{Binding seriesCollection}" Height="150" InnerRadius="100" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
+                <lvc:PieChart Series="{Binding seriesCollection, RelativeSource={RelativeSource AncestorType=Window}}" Background="Black" Foreground="White" InnerRadius="10" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
                     <lvc:PieChart.ChartLegend>
                         <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
                     </lvc:PieChart.ChartLegend>
@@ -33,50 +33,7 @@
                
             </TabItem>
 
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Customers"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Content goes here...as" />
-            </TabItem>
-
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Products"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Content goes here...ac" />
-            </TabItem>
-
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Suppliers"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Content goes here..." />
-            </TabItem>
-
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Shippers"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Content goes here..." />
-            </TabItem>
-
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Orders"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Content goes here..." />
-            </TabItem>
+            
 
         </TabControl>
 
