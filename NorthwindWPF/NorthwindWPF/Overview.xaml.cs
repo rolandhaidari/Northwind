@@ -38,10 +38,6 @@ namespace NorthwindWPF
             {
                 seriesCollection.Add(new PieSeries { Title = item.Categoryname, Values = new ChartValues<ObservableValue> { new ObservableValue(item.Categorysum) }, DataLabels = true});//, LabelPoint = PointLabel 
             }
-           /* PointLabel = chartPoint =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);*/
-                
-           // DataContext = this;
         }
         public SeriesCollection seriesCollection { get; set; }
 
